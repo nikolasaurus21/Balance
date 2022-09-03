@@ -5,8 +5,12 @@ namespace Balance.Models
     {
         public MoneyBalanceContext(DbContextOptions<MoneyBalanceContext> options)
             : base(options)
-        {
+        { }
 
-        }
+        
+        public DbSet<MoneyBalance> MoneyBalances { get; set; } = null!;
     }
+
+
+    
 }

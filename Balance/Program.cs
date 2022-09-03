@@ -12,10 +12,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetoore/swashbuckle
 
 builder.Services.AddDbContext<MoneyBalanceContext>(o =>
-o.UseNpgsql("MoneyBalanceContext")
+o.UseNpgsql("name=ConnectionStrings:MoneyBalanceContext")
+
 
 );
-
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

@@ -11,11 +11,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetoore/swashbuckle
 
-builder.Services.AddDbContext<MoneyBalanceContext>(o =>
-o.UseNpgsql("name=ConnectionStrings:MoneyBalanceContext")
+builder.Services.AddDbContext<MoneyBalanceContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("MoneyBalanceCOntext") 
+    ?? throw new InvalidOperationException("Connection string 'MoneyBalanceContext' not found.")));
 
+builder.Services.AddSingleton<MoneyBalance>();
 
-);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

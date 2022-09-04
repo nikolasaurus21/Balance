@@ -5,7 +5,7 @@ namespace Balance.Models
     public class MoneyBalance
     {
         [Key]
-        public double Id { get; set; }  
+        public int Id { get; set; }  
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;
         public double Balance { get; set; }

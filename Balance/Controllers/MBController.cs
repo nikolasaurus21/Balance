@@ -14,11 +14,11 @@ namespace Balance.Controllers
             _context = moneyBalance;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<MoneyBalanceDTO>> GetBalance(double id)
+        [HttpGet("{Id}")]
+        public async Task<ActionResult<MoneyBalanceDTO>> GetBalance(int Id)
         {
             
-            var response = await _context.MoneyBalances.FindAsync(id);
+            var response = await _context.MoneyBalances.FindAsync(Id);
 
             if (response == null)
             {
